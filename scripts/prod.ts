@@ -27,7 +27,7 @@ const main = async () => {
     const courses = await db
       .insert(schema.courses)
       .values([
-        { title: "Spanish", imageSrc: "/es.svg" },
+        { title: "Sexual Abuse", imageSrc: "/es.svg" },
       ])
       .returning();
 

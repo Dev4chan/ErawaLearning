@@ -24,32 +24,32 @@ const main = async () => {
     await db.insert(schema.courses).values([
       {
         id: 1,
-        title: "Spanish",
-        imageSrc: "/es.svg",
+        title: "Sexual Abuse",
+        imageSrc: "/child_abuse.svg",
       },
       {
         id: 2,
-        title: "Italian",
-        imageSrc: "/it.svg",
+        title: "Child Labour",
+        imageSrc: "/child_labour.svg",
       },
       {
         id: 3,
-        title: "French",
-        imageSrc: "/fr.svg",
+        title: "Child Marriage",
+        imageSrc: "/child_marriage.svg",
       },
       {
         id: 4,
-        title: "Croatian",
-        imageSrc: "/hr.svg",
+        title: "Online Exploitaion",
+        imageSrc: "/online_exploitation.svg",
       },
     ]);
 
     await db.insert(schema.units).values([
       {
         id: 1,
-        courseId: 1, // Spanish
+        courseId: 1, // Sexual Abuse
         title: "Unit 1",
-        description: "Learn the basics of Spanish",
+        description: "Learn about body awareness",
         order: 1,
       }
     ]);
@@ -65,24 +65,6 @@ const main = async () => {
         id: 2,
         unitId: 1, // Unit 1 (Learn the basics...)
         order: 2,
-        title: "Verbs",
-      },
-      {
-        id: 3,
-        unitId: 1, // Unit 1 (Learn the basics...)
-        order: 3,
-        title: "Verbs",
-      },
-      {
-        id: 4,
-        unitId: 1, // Unit 1 (Learn the basics...)
-        order: 4,
-        title: "Verbs",
-      },
-      {
-        id: 5,
-        unitId: 1, // Unit 1 (Learn the basics...)
-        order: 5,
         title: "Verbs",
       },
     ]);
