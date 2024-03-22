@@ -20,6 +20,7 @@ const main = async () => {
     await db.delete(schema.challengeOptions);
     await db.delete(schema.challengeProgress);
 
+    //Adding courses 
     await db.insert(schema.courses).values([
       {
         id: 1,
@@ -43,6 +44,7 @@ const main = async () => {
       },
     ]);
 
+    //Adding units
     await db.insert(schema.units).values([
       {
         id: 1,
@@ -74,20 +76,57 @@ const main = async () => {
       }
     ]);
 
+    
     await db.insert(schema.lessons).values([
       {
         id: 1,// Lesson 1
         unitId: 1, // Unit 1
         order: 1,
-        title: "Nouns",
+        title: "Good touch / Bad touch",
       },
       {
         id: 2,// Lesson 2
         unitId: 1, // Unit 1
         order: 2,
+        title: "",
+      },
+      {
+        id: 3,// Lesson 2
+        unitId: 2, // Unit 1
+        order: 2,
+        title: "Verbs",
+      },
+      {
+        id: 4,// Lesson 2
+        unitId: 2, // Unit 1
+        order: 2,
+        title: "Verbs",
+      },
+      {
+        id: 5,// Lesson 2
+        unitId: 3, // Unit 1
+        order: 2,
+        title: "Verbs",
+      },{
+        id: 6,// Lesson 2
+        unitId: 3, // Unit 1
+        order: 2,
+        title: "Verbs",
+      },
+      {
+        id: 7,// Lesson 2
+        unitId: 4, // Unit 1
+        order: 2,
+        title: "Verbs",
+      },
+      {
+        id: 8,// Lesson 2
+        unitId: 4, // Unit 1
+        order: 2,
         title: "Verbs",
       },
     ]);
+
 
     await db.insert(schema.challenges).values([
       {
@@ -95,21 +134,35 @@ const main = async () => {
         lessonId: 1, // Nouns
         type: "SELECT",
         order: 1,
-        question: 'Which one of these is the "the man"?',
+        question: "Which one of these can be fully trusted for your body/emotions?",
       },
       {
         id: 2,
         lessonId: 1, // Nouns
         type: "SELECT",
         order: 2,
-        question: '"the man"',
+        question: "Which one of these can be considered as bad touch body part?",
       },
       {
         id: 3,
         lessonId: 1, // Nouns
         type: "SELECT",
         order: 3,
-        question: 'Which one of these is the "the robot"?',
+        question: "Which one of these can be considered as bad touch body part?",
+      },
+      {
+        id: 4,
+        lessonId: 1, // Nouns
+        type: "SELECT",
+        order: 4,
+        question: "You should not hide secrets from whom?",
+      },
+      {
+        id: 5,
+        lessonId: 1, // Nouns
+        type: "SELECT",
+        order: 5,
+        question: "Should you keep any secrets from your parents?",
       },
     ]);
 
@@ -118,21 +171,21 @@ const main = async () => {
         challengeId: 1, // Which one of these is "the man"?
         imageSrc: "/man.svg",
         correct: true,
-        text: "el hombre",
+        text: "Guardian",
         audioSrc: "",
       },
       {
         challengeId: 1,
         imageSrc: "/woman.svg",
         correct: false,
-        text: "la mujer",
+        text: "Uncle",
         audioSrc: "",
       },
       {
         challengeId: 1,
         imageSrc: "/robot.svg",
         correct: false,
-        text: "el robot",
+        text: "Teacher",
         audioSrc: "",
       },
     ]);
@@ -140,20 +193,20 @@ const main = async () => {
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 2, // "the man"?
+        correct: false,
+        text: "Shoulder",
+        audioSrc: "",
+      },
+      {
+        challengeId: 2,
         correct: true,
-        text: "el hombre",
+        text: "Chest",
         audioSrc: "",
       },
       {
         challengeId: 2,
         correct: false,
-        text: "la mujer",
-        audioSrc: "",
-      },
-      {
-        challengeId: 2,
-        correct: false,
-        text: "el robot",
+        text: "Feet",
         audioSrc: "",
       },
     ]);
@@ -163,48 +216,66 @@ const main = async () => {
         challengeId: 3, // Which one of these is the "the robot"?
         imageSrc: "/man.svg",
         correct: false,
-        text: "el hombre",
-        audioSrc: "/es_man.mp3",
+        text: "Elbow",
+        audioSrc: "",
       },
       {
         challengeId: 3,
         imageSrc: "/woman.svg",
         correct: false,
-        text: "la mujer",
-        audioSrc: "/es_woman.mp3",
+        text: "Hand",
+        audioSrc: "",
       },
       {
         challengeId: 3,
         imageSrc: "/robot.svg",
         correct: true,
-        text: "el robot",
-        audioSrc: "/es_robot.mp3",
+        text: "Bottom",
+        audioSrc: "",
       },
     ]);
 
-    await db.insert(schema.challenges).values([
+    await db.insert(schema.challengeOptions).values([
       {
-        id: 4,
-        lessonId: 2, // Verbs
-        type: "SELECT",
-        order: 1,
-        question: 'Which one of these is the "the man"?',
+        challengeId: 4, // Which one of these is the "the robot"?
+        imageSrc: "/man.svg",
+        correct: false,
+        text: "Uncle",
+        audioSrc: "",
       },
       {
-        id: 5,
-        lessonId: 2, // Verbs
-        type: "ASSIST",
-        order: 2,
-        question: '"the man"',
+        challengeId: 4,
+        imageSrc: "/woman.svg",
+        correct: true,
+        text: "Guardian",
+        audioSrc: "",
       },
       {
-        id: 6,
-        lessonId: 2, // Verbs
-        type: "SELECT",
-        order: 3,
-        question: 'Which one of these is the "the robot"?',
+        challengeId: 4,
+        imageSrc: "/robot.svg",
+        correct: false,
+        text: "Strangers",
+        audioSrc: "",
       },
     ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 5, // Which one of these is the "the robot"?
+        imageSrc: "/man.svg",
+        correct: false,
+        text: "Yes",
+        audioSrc: "",
+      },
+      {
+        challengeId: 5,
+        imageSrc: "/woman.svg",
+        correct: true,
+        text: "No",
+        audioSrc: "",
+      }
+    ]);
+
     console.log("Seeding finished");
   } catch (error) {
     console.error(error);
