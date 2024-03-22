@@ -7,29 +7,23 @@ import { StickyWrapper } from "@/components/sticky-wrapper";
 import { getTopTenUsers, getUserProgress, getUserSubscription } from "@/db/queries";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
 
 const LearderboardPage = async () => {
   const userProgressData = getUserProgress();
-  const userSubscriptionData = getUserSubscription();
   const leaderboardData = getTopTenUsers();
 
   const [
     userProgress,
-    userSubscription,
     leaderboard,
   ] = await Promise.all([
     userProgressData,
-    userSubscriptionData,
     leaderboardData,
   ]);
 
   if (!userProgress || !userProgress.activeCourse) {
     redirect("/courses");
   }
-
-  const isPro = !!userSubscription?.isActive;
 
   return ( 
     <div className="flex flex-row-reverse gap-[48px] px-6">
@@ -38,11 +32,7 @@ const LearderboardPage = async () => {
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
-          hasActiveSubscription={isPro}
         />
-        {!isPro && (
-          <Promo />
-        )}
         <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
