@@ -31,8 +31,8 @@ export const Sidebar = ({ className }: Props) => {
       </Link>
       <div className=" flex flex-col gap-y-2 flex-1">
         <SidebarItem 
-          label="Learn" 
-          href="/learn"
+          label="Courses" 
+          href="/courses"
           iconSrc="/learn.svg"
         />
         <SidebarItem 

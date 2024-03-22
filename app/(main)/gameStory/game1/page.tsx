@@ -8,61 +8,116 @@ import Typewriter from "typewriter-effect";
 const PathwayGame1: React.FC = () => {
   const [stage, setStage] = useState<number>(0);
 
-   const  questions= [
-      {
-        title: "What Was The Name Of Enemy",
-        photo1: "/EDUCA.gif",
-        photo2:"/labour.png",
-        options: [
-          {
-            text: "Education",
-            tostage: 2,
-          },
-          {
-            text: "Home Maker",
-            tostage: 0,
-          },
-        ],
-      },
-      {
-        title:
-          "Sneha has started a family. What's next?hat Was The Name Of Enemy",
-        photo1: "",
-        photo2:"",
-        options: [
-          {
-            text: "Focus on career",
-            tostage: 100,
-          },
-          {
-            text: "House Wife",
-            tostage: 2,
-          },
-        ],
-      },
-    ]
+  const questions = [
+    {
+      title: "Arav, a small boy going to school with his parents happily...",
+      photo: "/abuse_story_1/a1.jpg",
+      options: [
+        {
+          text: "Back",
+          tostage: 0,
+        },
+        {
+          text: "Next",
+          tostage: 2,
+        },
+      ],
+    },
+    {
+      title:
+        "Arav enjoyed in school. His teacher taught him about good touch and bad touch. Some places in the body are our private parts that should not been touched by others. Only guardians can have that right.",
+      photo: "/abuse_story_1/a2.jpg",
+      options: [
+        {
+          text: "Back",
+          tostage: 1,
+        },
+        {
+          text: "Next",
+          tostage: 3,
+        },
+      ],
+    },
+
+    {
+      title:
+        "After school is finished   ARAV:I don't know about you uncle have you came here to receive me",
+
+      photo: "/abuse_story_1/a3.jpg",
+      options: [
+        {
+          text: "Back",
+          tostage: 2,
+        },
+        {
+          text: "Next",
+          tostage: 4,
+        },
+      ],
+    },
+
+    {
+      title:
+        "Uncle: Yes beta come we I have come to recieve you. I am your family friend. Come with me.",
+
+      photo: "/abuse_story_1/a4.jpg",
+      options: [
+        {
+          text: "Back",
+          tostage: 3,
+        },
+        {
+          text: "Next",
+          tostage: 5,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:1",
+
+      photo: "/abuse_story_1/a5.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 6,
+        },
+        {
+          text: "Go With Him",
+          tostage: 0,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:2",
+
+      photo: "/abuse_story_1/a5.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 100,
+        },
+        {
+          text: "Go With Him",
+          tostage: 0,
+        },
+      ],
+    },
+  ];
 
   const handleOptionClick = (tostage: number) => {
     setStage(tostage);
+    // setStage((stage)=>stage+1);
   };
 
-
+  console.log(stage);
   return (
-    <div className="text-center  flex flex-col justify-center items-center mx-auto h-[100vh]   bg-white">
+    <div className="text-center  flex flex-col justify-center items-center mx-auto h-[100vh] pt-4 *:  bg-white">
       {stage === 0 && (
         <>
-          <h1 className="text-5xl mb-4  text-blue-950 px-10 py-2 font-bold border-b-4 border-blue-300  transform transition-transform duration-100 ">
-            <Typewriter
-              options={{
-                strings: ["PathWay Game"],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </h1>
-
-          <div className="mb-6 h- mt-3 text-xl font-bold border-slate-200 border-1 p-5 py-7 w-[650px] rounded-md hover:bg-sky-500 bg-sky-400 text-slate-100">
-            <p> Welcome !</p>
+          <div className="mb-6 h- mt-3 font-bold border-slate-200 border-4 p-5 py-7 pt-6 w-[650px] rounded-lg text-slate-500 text-6xl">
+            <p> Play mindfully !</p>
           </div>
           <div className="flex justify-center items-center ml-[80px] gap-5 rounded-lg px-26">
             <Image
@@ -70,56 +125,40 @@ const PathwayGame1: React.FC = () => {
               alt="download Life"
               width={300}
               height={150}
-              className="text-black z-30 mr-14 w-[400px]  "
+              className="text-black z-30 mr-14 w-[640px] h-[360px]  "
             />
           </div>
 
           <button
-            className="bg-blue-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-blue-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
+            className="bg-blue-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white text-4xl p-2 px-4 rounded-lg hover:bg-blue-500 hover:border-sky-500  min-w-[200px] h-[75px] m-8 tracking-wide"
             onClick={() => setStage(1)}
           >
-            Work hard
+            Start
           </button>
         </>
       )}
 
       {stage !== 0 && stage !== 100 && (
         <>
-          <h1 className="text-5xl mb-4 text-blue-950 px-10 py-1 font-bold border-b-4 border-blue-300 inline transform translate-x-16 transition-transform duration-100">
-            <Typewriter
-              options={{
-                strings: ["PathWay Game"],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </h1>
-
-          <p className="mb-6  text-xl font-bold border-slate-200 border-1 p-5 py-7 rounded-md bg-sky-400 hover:bg-sky-500 text-slate-100 w-[650px]">
-            {questions[stage - 1].title}
-          </p>
-          <div className="mx-auto flex justify-center">
+          <div className="relative mx-auto flex justify-center">
             <Image
-              src={questions[stage-1].photo1}
+              src={questions[stage - 1].photo}
               alt="Successful Life"
-              width={350}
-              height={100}
-              className="mb-12 h-64 mr-4"
-            />
-            <Image
-              src={questions[stage-1].photo2}
-              alt="Successful Life"
-              width={350}
-              height={100}
-              className="mb-12 h-64"
+              width={640}
+              height={450}
+              className="h-[720px] w-[1280px] mb-12 mr-4"
             />
           </div>
+
+          <p className="mb-6  text-3xl font-bold border-slate-200 border-4 p-5 py-7 rounded-md text-slate-500 w-[1100px]">
+            {questions[stage - 1].title}
+          </p>
 
           <div className="flex gap-4">
             {questions[stage - 1].options.map((option) => {
               return (
                 <button
-                  className="bg-sky-400  mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
+                  className="z-10 bg-sky-400 -mt-46 mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
                   onClick={() => handleOptionClick(option.tostage)}
                 >
                   {option.text}
@@ -130,20 +169,8 @@ const PathwayGame1: React.FC = () => {
         </>
       )}
 
-
-
       {stage === 100 && (
         <>
-          <h1 className="text-5xl mb-4 text-blue-950 px-10 py-2 font-bold border-b-4 border-blue-300 inline transform transition-transform duration-100 ">
-            <Typewriter
-              options={{
-                strings: ["PathWay Game"],
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </h1>
-
           <div className="mx-auto flex justify-center ">
             <Image
               src="/award2.gif"
@@ -161,11 +188,9 @@ const PathwayGame1: React.FC = () => {
               Restart Game
             </button>
             <Link href={"/gameStory"}>
-            <button
-              className="bg-sky-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
-            >
-              Back
-            </button>
+              <button className="bg-sky-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide">
+                Back
+              </button>
             </Link>
           </div>
         </>

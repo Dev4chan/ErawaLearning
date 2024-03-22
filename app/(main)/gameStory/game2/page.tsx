@@ -56,7 +56,7 @@ const PathwayGame2: React.FC = () => {
               options={{
                 strings: ["PathWay Game"],
                 autoStart: true,
-                loop: true,
+                loop: false,
               }}
             />
           </h1>
