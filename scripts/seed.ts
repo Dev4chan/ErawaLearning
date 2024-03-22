@@ -19,7 +19,6 @@ const main = async () => {
     await db.delete(schema.challenges);
     await db.delete(schema.challengeOptions);
     await db.delete(schema.challengeProgress);
-    await db.delete(schema.userSubscription);
 
     await db.insert(schema.courses).values([
       {
@@ -51,19 +50,40 @@ const main = async () => {
         title: "Unit 1",
         description: "Learn about body awareness",
         order: 1,
+      },
+      {
+        id: 2,
+        courseId: 2, // Child Labour
+        title: "Unit 1",
+        description: "Learn about child labour",
+        order: 1,
+      },
+      {
+        id: 3,
+        courseId: 3, // child marriage
+        title: "Unit 1",
+        description: "Learn about child marriage",
+        order: 1,
+      },
+      {
+        id: 4,
+        courseId: 4, // online exploitation
+        title: "Unit 1",
+        description: "Learn about online exploitation",
+        order: 1,
       }
     ]);
 
     await db.insert(schema.lessons).values([
       {
-        id: 1,
-        unitId: 1, // Unit 1 (Learn the basics...)
+        id: 1,// Lesson 1
+        unitId: 1, // Unit 1
         order: 1,
         title: "Nouns",
       },
       {
-        id: 2,
-        unitId: 1, // Unit 1 (Learn the basics...)
+        id: 2,// Lesson 2
+        unitId: 1, // Unit 1
         order: 2,
         title: "Verbs",
       },
@@ -80,7 +100,7 @@ const main = async () => {
       {
         id: 2,
         lessonId: 1, // Nouns
-        type: "ASSIST",
+        type: "SELECT",
         order: 2,
         question: '"the man"',
       },
@@ -99,21 +119,21 @@ const main = async () => {
         imageSrc: "/man.svg",
         correct: true,
         text: "el hombre",
-        audioSrc: "/es_man.mp3",
+        audioSrc: "",
       },
       {
         challengeId: 1,
         imageSrc: "/woman.svg",
         correct: false,
         text: "la mujer",
-        audioSrc: "/es_woman.mp3",
+        audioSrc: "",
       },
       {
         challengeId: 1,
         imageSrc: "/robot.svg",
         correct: false,
         text: "el robot",
-        audioSrc: "/es_robot.mp3",
+        audioSrc: "",
       },
     ]);
 
@@ -122,19 +142,19 @@ const main = async () => {
         challengeId: 2, // "the man"?
         correct: true,
         text: "el hombre",
-        audioSrc: "/es_man.mp3",
+        audioSrc: "",
       },
       {
         challengeId: 2,
         correct: false,
         text: "la mujer",
-        audioSrc: "/es_woman.mp3",
+        audioSrc: "",
       },
       {
         challengeId: 2,
         correct: false,
         text: "el robot",
-        audioSrc: "/es_robot.mp3",
+        audioSrc: "",
       },
     ]);
 

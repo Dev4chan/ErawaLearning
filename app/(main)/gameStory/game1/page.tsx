@@ -41,7 +41,7 @@ const PathwayGame1: React.FC = () => {
 
     {
       title:
-        "After school is finished   ARAV:I don't know about you uncle have you came here to receive me",
+        "After school is finished \n ARAV:I don't know about you uncle have you came here to receive me",
 
       photo: "/abuse_story_1/a3.jpg",
       options: [
@@ -74,7 +74,7 @@ const PathwayGame1: React.FC = () => {
     },
 
     {
-      title: "Uncle:1",
+      title: "Uncle: 1",
 
       photo: "/abuse_story_1/a5.jpg",
       options: [
@@ -84,7 +84,7 @@ const PathwayGame1: React.FC = () => {
         },
         {
           text: "Go With Him",
-          tostage: 0,
+          tostage: 4,
         },
       ],
     },
@@ -92,7 +92,103 @@ const PathwayGame1: React.FC = () => {
     {
       title: "Uncle:2",
 
-      photo: "/abuse_story_1/a5.jpg",
+      photo: "/abuse_story_1/a6.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 7,
+        },
+        {
+          text: "Go With Him",
+          tostage: 5,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:3",
+
+      photo: "/abuse_story_1/a7.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 8,
+        },
+        {
+          text: "Go With Him",
+          tostage: 6,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:4",
+
+      photo: "/abuse_story_1/a8.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 9,
+        },
+        {
+          text: "Go With Him",
+          tostage: 7,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:5",
+
+      photo: "/abuse_story_1/a9.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 10,
+        },
+        {
+          text: "Go With Him",
+          tostage: 8,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:6",
+
+      photo: "/abuse_story_1/a10.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 11,
+        },
+        {
+          text: "Go With Him",
+          tostage: 9,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:7",
+
+      photo: "/abuse_story_1/a11.jpg",
+      options: [
+        {
+          text: "Go With Bus",
+          tostage: 12,
+        },
+        {
+          text: "Go With Him",
+          tostage: 10,
+        },
+      ],
+    },
+
+    {
+      title: "Uncle:8",
+
+      photo: "/abuse_story_1/a12.jpg",
       options: [
         {
           text: "Go With Bus",
