@@ -75,7 +75,7 @@ const PathwayGame1: React.FC = () => {
           </div>
 
           <button
-            className="bg-sky-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
+            className="bg-blue-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-blue-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
             onClick={() => setStage(1)}
           >
             Work hard

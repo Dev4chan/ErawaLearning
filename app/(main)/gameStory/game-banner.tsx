@@ -27,8 +27,7 @@ export const GameBanner = ({
       <Link href={`/gameStory/game${id}`}>
         <Button
           size="lg"
-          variant="secondary"
-          className="hidden xl:flex border-2 border-b-4 active:border-b-2 bg-blur"
+          className="hidden xl:flex border-2 border-b-4 active:border-b-2 bg-blur bg-white hover:bg-blue-200"
         >
           <Play className="mr-2" />
           Play
