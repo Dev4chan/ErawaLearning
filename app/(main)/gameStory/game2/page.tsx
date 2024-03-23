@@ -363,4 +363,4 @@ const PathwayGame1: React.FC = () => {
   );
 };
 
-export default PathwayGame1;
+export default PathwayGame1;
