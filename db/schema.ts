@@ -80,7 +80,7 @@ export const challengeOptionsRelations = relations(challengeOptions, ({ one }) =
 
 export const challengeProgress = pgTable("challenge_progress", {
   id: serial("id").primaryKey(),
-  userId: text("user_id").notNull(),
+  user: text("user").notNull(),
   challengeId: integer("challenge_id").references(() => challenges.id, { onDelete: "cascade" }).notNull(),
   completed: boolean("completed").notNull().default(false),
 });
@@ -93,7 +93,7 @@ export const challengeProgressRelations = relations(challengeProgress, ({ one })
 }));
 
 export const userProgress = pgTable("user_progress", {
-  userId: text("user_id").primaryKey(),
+  id: text("id").primaryKey(),
   userName: text("user_name").notNull().default("User"),
   userImageSrc: text("user_image_src").notNull().default("/mascot.svg"),
   activeCourseId: integer("active_course_id").references(() => courses.id, { onDelete: "cascade" }),

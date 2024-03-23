@@ -43,7 +43,7 @@ export const upsertUserProgress = async (courseId: number) => {
   }
 
   await db.insert(userProgress).values({
-    userId,
+    id:userId,
     activeCourseId: courseId,
     userName: user.firstName || "User",
     userImageSrc: user.imageUrl || "/mascot.svg",
@@ -75,7 +75,7 @@ export const reduceHearts = async (challengeId: number) => {
 
   const existingChallengeProgress = await db.query.challengeProgress.findFirst({
     where: and(
-      eq(challengeProgress.userId, userId),
+      eq(challengeProgress.user, userId),
       eq(challengeProgress.challengeId, challengeId),
     ),
   });
@@ -97,7 +97,7 @@ export const reduceHearts = async (challengeId: number) => {
 
   await db.update(userProgress).set({
     hearts: Math.max(currentUserProgress.hearts - 1, 0),
-  }).where(eq(userProgress.userId, userId));
+  }).where(eq(userProgress.id, userId));
 
   revalidatePath("/learn");
   revalidatePath("/quests");
@@ -123,7 +123,7 @@ export const refillHearts = async () => {
   await db.update(userProgress).set({
     hearts: 5,
     points: currentUserProgress.points - POINTS_TO_REFILL,
-  }).where(eq(userProgress.userId, currentUserProgress.userId));
+  }).where(eq(userProgress.id, currentUserProgress.id));
 
   revalidatePath("/learn");
   revalidatePath("/quests");

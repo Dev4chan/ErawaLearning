@@ -19,7 +19,7 @@ export const getUserProgress = cache(async () => {
   }
 
   const data = await db.query.userProgress.findFirst({
-    where: eq(userProgress.userId, userId),
+    where: eq(userProgress.id, userId),
     with: {
       activeCourse: true,
     },
@@ -48,7 +48,7 @@ export const getUnits = cache(async () => {
             with: {
               challengeProgress: {
                 where: eq(
-                  challengeProgress.userId,
+                  challengeProgress.user,
                   userId,
                 ),
               },
@@ -125,7 +125,7 @@ export const getCourseProgress = cache(async () => {
           challenges: {
             with: {
               challengeProgress: {
-                where: eq(challengeProgress.userId, userId),
+                where: eq(challengeProgress.user, userId),
               },
             },
           },
@@ -173,7 +173,7 @@ export const getLesson = cache(async (id?: number) => {
         with: {
           challengeOptions: true,
           challengeProgress: {
-            where: eq(challengeProgress.userId, userId),
+            where: eq(challengeProgress.user, userId),
           },
         },
       },
@@ -229,7 +229,7 @@ export const getTopTenUsers = cache(async () => {
     orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
     limit: 10,
     columns: {
-      userId: true,
+      id: true,
       userName: true,
       userImageSrc: true,
       points: true,
