@@ -5,7 +5,7 @@ import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 import db from "@/db/drizzle";
-import { getUserProgress, getUserSubscription } from "@/db/queries";
+import { getUserProgress} from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
 
 export const upsertChallengeProgress = async (challengeId: number) => {
@@ -16,7 +16,6 @@ export const upsertChallengeProgress = async (challengeId: number) => {
   }
 
   const currentUserProgress = await getUserProgress();
-  const userSubscription = await getUserSubscription();
 
   if (!currentUserProgress) {
     throw new Error("User progress not found");
@@ -34,7 +33,7 @@ export const upsertChallengeProgress = async (challengeId: number) => {
 
   const existingChallengeProgress = await db.query.challengeProgress.findFirst({
     where: and(
-      eq(challengeProgress.userId, userId),
+      eq(challengeProgress.user, userId),
       eq(challengeProgress.challengeId, challengeId),
     ),
   });
@@ -43,8 +42,7 @@ export const upsertChallengeProgress = async (challengeId: number) => {
 
   if (
     currentUserProgress.hearts === 0 && 
-    !isPractice && 
-    !userSubscription?.isActive
+    !isPractice
   ) {
     return { error: "hearts" };
   }
@@ -60,7 +58,7 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     await db.update(userProgress).set({
       hearts: Math.min(currentUserProgress.hearts + 1, 5),
       points: currentUserProgress.points + 10,
-    }).where(eq(userProgress.userId, userId));
+    }).where(eq(userProgress.id, userId));
 
     revalidatePath("/learn");
     revalidatePath("/lesson");
@@ -72,13 +70,13 @@ export const upsertChallengeProgress = async (challengeId: number) => {
 
   await db.insert(challengeProgress).values({
     challengeId,
-    userId,
+    user:userId,
     completed: true,
   });
 
   await db.update(userProgress).set({
     points: currentUserProgress.points + 10,
-  }).where(eq(userProgress.userId, userId));
+  }).where(eq(userProgress.id, userId));
 
   revalidatePath("/learn");
   revalidatePath("/lesson");

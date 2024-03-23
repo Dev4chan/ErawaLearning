@@ -207,9 +207,8 @@ const PathwayGame1: React.FC = () => {
     // setStage((stage)=>stage+1);
   };
 
-  console.log(stage);
   return (
-    <div className="text-center  flex flex-col justify-center items-center mx-auto h-[100vh] pt-4 *:  bg-white">
+    <div className=" text-center  flex flex-col justify-center items-center mx-auto h-[100vh] pt-0 *:  bg-white">
       {stage === 0 && (
         <>
           <div className="mb-6 h- mt-3 font-bold border-slate-200 border-4 p-5 py-7 pt-6 w-[650px] rounded-lg text-slate-500 text-6xl">
@@ -242,11 +241,11 @@ const PathwayGame1: React.FC = () => {
               alt="Successful Life"
               width={640}
               height={450}
-              className="h-[720px] w-[1280px] mb-12 mr-4"
+              className="h-[480px] w-[854x] mb-6 mr-4"
             />
           </div>
 
-          <p className="mb-6  text-3xl font-bold border-slate-200 border-4 p-5 py-7 rounded-md text-slate-500 w-[1100px]">
+          <p className="mb-2 text-2xl font-bold border-slate-200 border-4 p-5 py-4 rounded-md text-slate-500 w-10/12">
             {questions[stage - 1].title}
           </p>
 
@@ -254,7 +253,7 @@ const PathwayGame1: React.FC = () => {
             {questions[stage - 1].options.map((option) => {
               return (
                 <button
-                  className="z-10 bg-sky-400 -mt-46 mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
+                  className="z-10 bg-sky-400 -mt-46 mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-4 tracking-wide"
                   onClick={() => handleOptionClick(option.tostage)}
                 >
                   {option.text}

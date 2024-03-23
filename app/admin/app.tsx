@@ -22,12 +22,21 @@ import { ChallengeCreate } from "./challenge/create";
 import { ChallengeOptionList } from "./challengeOption/list";
 import { ChallengeOptionEdit } from "./challengeOption/edit";
 import { ChallengeOptionCreate } from "./challengeOption/create";
+import { UserProgressList } from "./userProgress/list";
 
 const dataProvider = simpleRestProvider("/api");
 
 const App = () => {
   return (
     <Admin dataProvider={dataProvider}>
+      <Resource
+        name="userProgresses"
+        list={UserProgressList}
+        // create={ChallengeOptionCreate}
+        // edit={ChallengeOptionEdit}
+        recordRepresentation="text"
+        options={{ label: "User Progress" }}
+      />
       <Resource
         name="courses"
         list={CourseList}
