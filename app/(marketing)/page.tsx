@@ -48,7 +48,7 @@ export default function Home() {
             </SignedOut>
             <SignedIn>
               <Button size="lg" className="bg-sky-400 w-full border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide" asChild>
-                <Link href="/learn">
+                <Link href="/courses">
                   Continue Learning
                 </Link>
               </Button>

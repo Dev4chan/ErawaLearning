@@ -168,22 +168,22 @@ const main = async () => {
 
     await db.insert(schema.challengeOptions).values([
       {
-        challengeId: 1, // Which one of these is "the man"?
-        imageSrc: "/man.svg",
+        challengeId: 1, // Which one of these can be fully trusted for your body/emotions?
+        imageSrc: "/guardian.png",
         correct: true,
         text: "Guardian",
         audioSrc: "",
       },
       {
         challengeId: 1,
-        imageSrc: "/woman.svg",
+        imageSrc: "/uncle.png",
         correct: false,
         text: "Uncle",
         audioSrc: "",
       },
       {
         challengeId: 1,
-        imageSrc: "/robot.svg",
+        imageSrc: "/teacher.png",
         correct: false,
         text: "Teacher",
         audioSrc: "",
@@ -192,19 +192,22 @@ const main = async () => {
 
     await db.insert(schema.challengeOptions).values([
       {
-        challengeId: 2, // "the man"?
+        challengeId: 2, // Which one of these can be considered as bad touch body part?
+        imageSrc: "/shoulder.png",
         correct: false,
         text: "Shoulder",
         audioSrc: "",
       },
       {
         challengeId: 2,
+        imageSrc: "/chest.png",
         correct: true,
         text: "Chest",
         audioSrc: "",
       },
       {
         challengeId: 2,
+        imageSrc: "/feet.png",
         correct: false,
         text: "Feet",
         audioSrc: "",
@@ -213,22 +216,22 @@ const main = async () => {
 
     await db.insert(schema.challengeOptions).values([
       {
-        challengeId: 3, // Which one of these is the "the robot"?
-        imageSrc: "/man.svg",
+        challengeId: 3, // Which one of these can be considered as bad touch body part?
+        imageSrc: "/elbow.png",
         correct: false,
         text: "Elbow",
         audioSrc: "",
       },
       {
         challengeId: 3,
-        imageSrc: "/woman.svg",
+        imageSrc: "/hand.png",
         correct: false,
         text: "Hand",
         audioSrc: "",
       },
       {
         challengeId: 3,
-        imageSrc: "/robot.svg",
+        imageSrc: "/bottom.png",
         correct: true,
         text: "Bottom",
         audioSrc: "",
@@ -237,22 +240,22 @@ const main = async () => {
 
     await db.insert(schema.challengeOptions).values([
       {
-        challengeId: 4, // Which one of these is the "the robot"?
-        imageSrc: "/man.svg",
+        challengeId: 4, // You should not hide secrets from whom?
+        imageSrc: "/uncle.png",
         correct: false,
         text: "Uncle",
         audioSrc: "",
       },
       {
         challengeId: 4,
-        imageSrc: "/woman.svg",
+        imageSrc: "/guardian.png",
         correct: true,
-        text: "Guardian",
+        text: "Guardians",
         audioSrc: "",
       },
       {
         challengeId: 4,
-        imageSrc: "/robot.svg",
+        imageSrc: "/stranger.png",
         correct: false,
         text: "Strangers",
         audioSrc: "",
@@ -261,15 +264,15 @@ const main = async () => {
 
     await db.insert(schema.challengeOptions).values([
       {
-        challengeId: 5, // Which one of these is the "the robot"?
-        imageSrc: "/man.svg",
+        challengeId: 5, // Should you keep any secrets from your parents?
+        imageSrc: "/yes.png",
         correct: false,
         text: "Yes",
         audioSrc: "",
       },
       {
         challengeId: 5,
-        imageSrc: "/woman.svg",
+        imageSrc: "/no.png",
         correct: true,
         text: "No",
         audioSrc: "",

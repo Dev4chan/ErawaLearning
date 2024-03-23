@@ -13,8 +13,11 @@ const LearnPage: React.FC = async () => {
   // Define games array with type Game[]
   const games: Game[] = [
     // Example game objects
-    { id: 1, title: "Game 1", description: "Description for Game 1" },
-    { id: 2, title: "Game 2", description: "Description for Game 2" },
+    { id: 1, title: "Game 1", description: "Story: Sexual Abuse - Part-I" },
+    { id: 2, title: "Game 2", description: "Story: Sexual Abuse - Part-II" },
+    { id: 3, title: "Game 3", description: "Story: Child Labour" },
+    { id: 4, title: "Game 4", description: "Story: Child Marriage" },
+    { id: 5, title: "Game 5", description: "Story: Online Exploitation" },
     // Add more game objects as needed
   ];  
 

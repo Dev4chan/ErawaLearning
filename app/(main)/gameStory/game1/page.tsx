@@ -3,16 +3,18 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Typewriter from "typewriter-effect";
+
 
 const PathwayGame1: React.FC = () => {
   const [stage, setStage] = useState<number>(0);
 
+
   const questions = [
     {
       title: "Arav, a small boy going to school with his parents happily...",
-      photo: "/abuse_story_1/a1.jpg",
+      photo: "/a1.jpg",
       options: [
+
         {
           text: "Back",
           tostage: 0,
@@ -21,12 +23,13 @@ const PathwayGame1: React.FC = () => {
           text: "Next",
           tostage: 2,
         },
+
       ],
     },
     {
       title:
         "Arav enjoyed in school. His teacher taught him about good touch and bad touch. Some places in the body are our private parts that should not been touched by others. Only guardians can have that right.",
-      photo: "/abuse_story_1/a2.jpg",
+      photo: "/a2.jpg",
       options: [
         {
           text: "Back",
@@ -41,9 +44,9 @@ const PathwayGame1: React.FC = () => {
 
     {
       title:
-        "After school is finished \n ARAV:I don't know about you uncle have you came here to receive me",
+        "After school is finished ... ARAV:I don't know about you uncle have you came here to receive me",
 
-      photo: "/abuse_story_1/a3.jpg",
+      photo: "/a3.jpg",
       options: [
         {
           text: "Back",
@@ -58,148 +61,226 @@ const PathwayGame1: React.FC = () => {
 
     {
       title:
-        "Uncle: Yes beta come we I have come to recieve you. I am your family friend. Come with me.",
+        "Uncle: Yes beta come we I have come to recieve you. I am your family friend. Come with me.",
 
-      photo: "/abuse_story_1/a4.jpg",
+      photo: "/a4.jpg",
+      options: [
+
+        {
+          text: "Go With Uncle",
+          tostage: 17, 
+        },
+        {
+          text: "Go With Bus",
+          tostage: 5,
+        },
+
+      ],
+    },
+
+   
+
+    {
+
+      title: "You did a great job , going with the stranger is not good",
+      photo: "/bus.jpg",
+      options: [
+        
+        {
+          text: "next",
+          tostage: 6,
+        },
+
+       
+      ],
+    },
+
+
+    {
+      title: "Dad: 'Meet your uncle he is my new friend ... meet him and uncle would take care of you, we are going to Market'",
+
+      photo: "/a5.jpg",
       options: [
         {
           text: "Back",
-          tostage: 3,
+          tostage: 5,
         },
         {
           text: "Next",
-          tostage: 5,
+          tostage: 7,
         },
       ],
     },
 
     {
-      title: "Uncle: 1",
+      title: "Uncle: Hi Beta, I will take care of you, come near to me ",
 
-      photo: "/abuse_story_1/a5.jpg",
+      photo: "/a6.jpg",
       options: [
+        
         {
-          text: "Go With Bus",
-          tostage: 6,
-        },
-        {
-          text: "Go With Him",
-          tostage: 4,
+          text: "Next",
+          tostage: 8,
         },
       ],
     },
 
     {
-      title: "Uncle:2",
+      title: "Uncle: wow your skin is so soft, don't tell this to your parents...... child thinking what uncle is doing is considered as BAD TOUCH",
+     
 
-      photo: "/abuse_story_1/a6.jpg",
+      photo: "/a9.jpg",
       options: [
         {
-          text: "Go With Bus",
+          text: "Dont't Resist",
           tostage: 7,
         },
         {
-          text: "Go With Him",
-          tostage: 5,
-        },
-      ],
-    },
-
-    {
-      title: "Uncle:3",
-
-      photo: "/abuse_story_1/a7.jpg",
-      options: [
-        {
-          text: "Go With Bus",
-          tostage: 8,
-        },
-        {
-          text: "Go With Him",
-          tostage: 6,
-        },
-      ],
-    },
-
-    {
-      title: "Uncle:4",
-
-      photo: "/abuse_story_1/a8.jpg",
-      options: [
-        {
-          text: "Go With Bus",
+          text: "Resist",
           tostage: 9,
         },
-        {
-          text: "Go With Him",
-          tostage: 7,
-        },
       ],
     },
 
     {
-      title: "Uncle:5",
+      title: "You did a great job, resisting was the best option",
 
-      photo: "/abuse_story_1/a9.jpg",
+      photo: "/a10.jpg",
       options: [
         {
-          text: "Go With Bus",
-          tostage: 10,
-        },
-        {
-          text: "Go With Him",
+          text: "Back",
           tostage: 8,
         },
-      ],
-    },
-
-    {
-      title: "Uncle:6",
-
-      photo: "/abuse_story_1/a10.jpg",
-      options: [
         {
-          text: "Go With Bus",
+          text: "Next",
           tostage: 11,
         },
+      ],
+
+    },
+
+    {
+      title: "Arav is sad now, he did't resist uncle..... uncle has abused him",
+
+      photo: "/a12.jpg",
+      options: [
         {
-          text: "Go With Him",
-          tostage: 9,
+          text: "Back ",
+          tostage: 8,
+        },
+        { 
+          text: "Next",
+          tostage: 11,
         },
       ],
     },
 
-    {
-      title: "Uncle:7",
 
-      photo: "/abuse_story_1/a11.jpg",
+
+    {
+      title: "Uncle: Beta don't tell this to anyone, please take chocolate",
+
+      photo: "/a11.jpg",
       options: [
         {
-          text: "Go With Bus",
+          text: "Back",
+          tostage: 8,
+        },
+        {
+          text: "Next",
           tostage: 12,
         },
-        {
-          text: "Go With Him",
-          tostage: 10,
-        },
       ],
     },
 
     {
-      title: "Uncle:8",
+      title: "Child is crying now",
 
-      photo: "/abuse_story_1/a12.jpg",
+      photo: "/15.jpg",
       options: [
+        
         {
-          text: "Go With Bus",
-          tostage: 100,
-        },
-        {
-          text: "Go With Him",
-          tostage: 0,
+          text: " Next",
+          tostage: 13,
         },
       ],
     },
+ 
+     {
+    title: "Parents has arriver now",
+
+    photo: "/14.jpg",
+    options: [
+      {
+        text: "Back",
+        tostage: 8,
+      },
+      {
+        text: " Next",
+        tostage: 14,
+      },
+    ],
+  },
+
+  {
+    title: "Arav is sad, uncle has touched him unappropritely",
+
+    photo: "/a16.jpg",
+    options: [
+      {
+        text: "Back",
+        tostage: 8,
+      },
+      {
+        text: " Next",
+        tostage: 15,
+      },
+    ],
+  },
+
+  {
+    title: " Parent are shocked, they are going to see uncle",
+
+    photo: "/17.jpg",
+    options: [
+      {
+        text: "Back",
+        tostage: 8,
+      },
+      {
+        text: " Next",
+        tostage: 16,
+      },
+    ],
+  },
+
+
+  {
+    title: " Uncle is  going to jail",
+
+    photo: "/a20.jpg",
+    options: [
+     
+      {
+        text: "Next",
+        tostage: 100,
+      },
+    ],
+  },
+
+  {
+    title: "hell",
+
+    photo: "/kidnap.jpg",
+    options: [
+     
+      {
+        text: "End",
+        tostage: 0,
+      },
+    ],
+  },
+
   ];
 
   const handleOptionClick = (tostage: number) => {
@@ -207,23 +288,25 @@ const PathwayGame1: React.FC = () => {
     // setStage((stage)=>stage+1);
   };
 
+
   console.log(stage);
   return (
-    <div className="text-center  flex flex-col justify-center items-center mx-auto h-[100vh] pt-4 *:  bg-white">
+    <div className=" text-center  flex flex-col justify-center items-center mx-auto h-[100vh] pt-0 *:  bg-white">
       {stage === 0 && (
         <>
-          <div className="mb-6 h- mt-3 font-bold border-slate-200 border-4 p-5 py-7 pt-6 w-[650px] rounded-lg text-slate-500 text-6xl">
+          <div className="mb-2 h- mt-3 font-bold border-slate-200 border-4 p-5 py-7 pt-6 w-[650px] rounded-lg text-slate-500 text-6xl">
             <p> Play mindfully !</p>
           </div>
           <div className="flex justify-center items-center ml-[80px] gap-5 rounded-lg px-26">
             <Image
-              src="/startss.gif"
+              src="/startes.gif"
               alt="download Life"
               width={300}
               height={150}
-              className="text-black z-30 mr-14 w-[640px] h-[360px]  "
+              className="text-black z-30 mr-14  w-[500px] h-[420px]  "
             />
           </div>
+
 
           <button
             className="bg-blue-400 border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white text-4xl p-2 px-4 rounded-lg hover:bg-blue-500 hover:border-sky-500  min-w-[200px] h-[75px] m-8 tracking-wide"
@@ -242,11 +325,11 @@ const PathwayGame1: React.FC = () => {
               alt="Successful Life"
               width={640}
               height={450}
-              className="h-[720px] w-[1280px] mb-12 mr-4"
+              className="h-[480px] w-[854x] mb-6 mr-4"
             />
           </div>
 
-          <p className="mb-6  text-3xl font-bold border-slate-200 border-4 p-5 py-7 rounded-md text-slate-500 w-[1100px]">
+          <p className="mb-2 text-2xl font-bold border-slate-200 border-4 p-5 py-4 rounded-md text-slate-500 w-10/12">
             {questions[stage - 1].title}
           </p>
 
@@ -254,7 +337,7 @@ const PathwayGame1: React.FC = () => {
             {questions[stage - 1].options.map((option) => {
               return (
                 <button
-                  className="z-10 bg-sky-400 -mt-46 mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-8 tracking-wide"
+                  className="z-10 bg-sky-400 -mt-46 mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-4 tracking-wide"
                   onClick={() => handleOptionClick(option.tostage)}
                 >
                   {option.text}
