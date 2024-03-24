@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { FeedWrapper } from "@/components/feed-wrapper";
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
-import { getTopTenUsers, getUserProgress, getUserSubscription } from "@/db/queries";
+import { getTopTenUsers, getUserProgress } from "@/db/queries";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Quests } from "@/components/quests";
@@ -52,7 +52,7 @@ const LearderboardPage = async () => {
           <Separator className="mb-4 h-0.5 rounded-full" />
           {leaderboard.map((userProgress, index) => (
             <div 
-              key={userProgress.userId}
+              key={userProgress.id}
               className="flex items-center w-full p-2 px-4 rounded-xl hover:bg-gray-200/50"
             >
               <p className="font-bold text-lime-700 mr-4">{index + 1}</p>
