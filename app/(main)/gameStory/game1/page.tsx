@@ -288,6 +288,8 @@ const PathwayGame1: React.FC = () => {
     // setStage((stage)=>stage+1);
   };
 
+
+  console.log(stage);
   return (
     <div className=" text-center  flex flex-col justify-center items-center mx-auto h-[100vh] pt-0 *:  bg-white">
       {stage === 0 && (
