@@ -319,11 +319,12 @@ const PathwayGame1: React.FC = () => {
           </p>
 
           <div className="flex gap-4">
-            {questions[stage - 1].options.map((option) => {
+            {questions[stage - 1].options.map((option,index) => {
               return (
                 <button
                   className="z-10 bg-sky-400 -mt-46 mr-[100px] border-sky-700/90 border-1 border-b-[4px] active:border-b-[2px] font-bold text-white p-2 px-4 rounded-lg hover:bg-sky-500 hover:border-sky-500  min-w-[150px] m-4 tracking-wide"
                   onClick={() => handleOptionClick(option.tostage)}
+                  key={index}
                 >
                   {option.text}
                 </button>
