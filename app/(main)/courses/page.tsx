@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { getCourses, getUserProgress } from "@/db/queries";
 import { currentUser } from "@clerk/nextjs";
 
