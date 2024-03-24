@@ -7,12 +7,13 @@ import Typewriter from 'typewriter-effect';
 
 
 const PathwayGame1: React.FC = () => {
-  const [stage, setStage] = useState<number>(0);
+const [stage, setStage] = useState<number>(0);
 
   const questions = [
+    
     {
-      title: "Tina a small girl ambitious to her study",
-      photo: "/Child_marriage/b1.jpg", 
+      title: "Suppose in alternate universe ,Arv's parents didn't believe in him and scold him about abuse",
+      photo: "/ab/1.jpg", 
       options: [
         {
           text: "Back",
@@ -28,9 +29,8 @@ const PathwayGame1: React.FC = () => {
 
 
     {
-      title:"There is knock on door , she runs to the door",
-    
-      photo: "/Child_marriage/b2.jpg",
+      title:" Next day Arv gone to school and was enjoying and suddenly he heard uncle came to meet him ",
+      photo: "/ab/2.jpg", 
       options: [
 
         {
@@ -48,53 +48,52 @@ const PathwayGame1: React.FC = () => {
 
     {
       title:
-        "She welcomes the guest and welcomes the guest .",
+        " Uncle has been fishy and since last incidence he has been hard to see handle uncle ",
 
-      photo: "/Child_marriage/b3.jpg",
+        photo: "/ab/3.jpg",  
       options: [
         {
-          text: "Back",
-          tostage: 2,
+          text: "Stay with him",
+          tostage: 4,
         },
         {
-          text: "Next",
-          tostage: 4,
+          text: "Leave",
+          tostage: 5,
         },
       ],
     },
 
     {
       title:
-        " Uncle started a conversion with Tina and call her mother",
+        " It was a bad desicion uncle. Now has touched Uncle npw has performed bad touch to your body",
 
-      photo: "/Child_marriage/b4.jpg",
+        photo: "/ab/4.jpg",  
       options: [
 
         {
-          text: "Back",
+          text: "Back ",
           tostage: 3, 
         },
         {
           text: "Next",
           tostage: 5,
         },
-
       ],
     },
 
-   
+
 
     {
 
-      title: "They chaat for a while and her mother reveal that she is getting married to that man",
-      photo: "/Child_marriage/b5.jpg",
+      title: "Arav has been thinking about doing something that how he will handle uncle",
+      photo: "/ab/12.jpg", 
       options: [
         {
-          text: "Back",
-          tostage: 4, 
+          text: "Forget about Uncle",
+          tostage: 0, 
         },
         {
-          text: "Next",
+          text: "Think solution",
           tostage: 6,
         },
        
@@ -103,13 +102,13 @@ const PathwayGame1: React.FC = () => {
 
 
     {
-      title: " She got shocked",
+      title: " Arv thought about no solution and started crying , Tv was only thing he could watch",
 
-      photo: "/Child_marriage/b6.jpg",
+      photo: "/ab/5.jpg", 
       options: [
         {
           text: "Back",
-          tostage: 13,
+          tostage: 5,
         },
         {
           text: "Next",
@@ -118,14 +117,15 @@ const PathwayGame1: React.FC = () => {
       ],
     },
 
-    {
-      title: " Mother tells her , marriage is good for her. and she tells her to have a discussion with Groom ",
 
-      photo: "/Child_marriage/b7.jpg",
+     
+    {
+      title: " Arav is happy now , he has seen show for child who are suffering with similar problems ",
+      photo: "/ab/7.jpg", 
       options: [
         {
           text: "Back",
-          tostage: 14, 
+          tostage: 6,
         },
         {
           text: "Next",
@@ -133,138 +133,92 @@ const PathwayGame1: React.FC = () => {
         },
       ],
     },
-
-    {
-      title: "Groom start emotional blackmailing to her, so she should leave her education",
      
 
-      photo: "/Child_marriage/b8.jpg",
+    {
+      title: "1098 is a child helpline service which help children with all kind of battles ",
+
+      photo: "/ab/6.jpg", 
       options: [
+        
         {
-          text: "Back",
-          tostage: 14,
+          text: "Nothing",
+          tostage: 0,
         },
         {
-          text: "Next",
+          text: "Police",
+          tostage: 12,
+        },
+        {
+          text: "Child Helpline",
           tostage: 9,
         },
       ],
     },
 
     {
-      title: "she concerns about terrible future as she is not ready",
+      title: " What to call ",
 
-      photo: "/Child_marriage/b9.jpg",
+      photo: "/ab/8.jpg",  
       options: [
         {
-          text: "Back",
-          tostage: 15,
+          text: "1028",
+          tostage: 7,
         },
         {
-          text: "Next",
+          text: "1098",
           tostage: 10,
         },
       ],
-
     },
 
     {
-      title: "Marriage will ruin her life, Education is must ",
+      title: " Arv has told all his problems to child helpline , they are here to help him",
 
-      photo: "/Child_marriage/b10.jpg",
+      photo: "/ab/9.jpg",
       options: [
         {
-          text: "Back ",
-          tostage: 9,
+          text: "Back",
+          tostage: 8,
         },
-        { 
+        {
           text: "Next",
           tostage: 11,
         },
       ],
+
     },
 
-
-
     {
-      title: "Dream to become a Doctor",
+      title: "Police has helped the child and child helpline has explained the parents about mishaps...... Arv is happy now",
 
-      photo: "/Child_marriage/b11.jpg",
+      photo: "/ab/10.jpg", 
       options: [
         {
-          text: "Back",
-          tostage: 10,
+          text: "Back ",
+          tostage: 7,
         },
-        {
+        { 
           text: "Next",
           tostage: 100,
         },
       ],
     },
 
-  
 
 
-  {
-    title: " Her life become Hell",
+    {
+      title: " police has came and parents think that its Arv's mistake ",
 
-    photo: "/Child_marriage/1.jpeg",
-    options: [
-      {
-        text: "Back",
-        tostage: 10,
-      },
-      {
-        text: "Next",
-        tostage: 1,
-      },
-    ],
-  },
-
-  {
-    title: " She become too frusted due to her work",
-
-    photo: "/Child_marriage/2.jpeg",
-    options: [
-      {
-        text: "Back",
-        tostage: 5,
-      },
-      {
-        text: "Next",
-        tostage: 1,
-      },
-    ],
-  },
-
-  {
-    title: " She will be totally depend on one man and can't enjoy her life",
-
-    photo: "/Child_marriage/3.jpeg",
-    options: [
-      {
-        text: "Back ",
-        tostage: 5,
-      },
-      {
-        text: "Next",
-        tostage: 1,
-      },
-    ],
-  },
-
-  {
-    title: "After seeing she is mature her parents are happy",
-
-    photo: "/Child_marriage/b12.jpg",
-    options: [
-      
-      {
-        text: " Next",
-        tostage: 100,
-      },
-    ],
-  },
+      photo: "/ab/11.jpg",
+      options: [
+        
+        {
+          text: "Reconsider the situation",
+          tostage: 8,
+        },
+      ],
+    },
 
   ];
 
@@ -272,7 +226,6 @@ const PathwayGame1: React.FC = () => {
     setStage(tostage);
     // setStage((stage)=>stage+1);
   };
-
 
   console.log(stage);
   return (

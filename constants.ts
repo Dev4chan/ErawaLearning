@@ -17,4 +17,8 @@ export const quests = [
     title: "Earn 500 XP",
     value: 500,
   },
+  {
+    title: "Earn 1000 XP",
+    value: 1000,
+  },
 ];
