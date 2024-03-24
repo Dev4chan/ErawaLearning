@@ -19,7 +19,7 @@ const CoursesPage = async () => {
       <h1 className="text-5xl font-bold text-slate-500 mt-4 mb-6 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
         {`Hi, ${data?.firstName} !`}
       </h1>
-      <h1 className="text-3xl font-bold text-slate-500">{"Let's learn !"}</h1>
+      <h1 className="text-3xl font-bold text-slate-500">Let&apos;s learn !</h1>
       <List courses={courses} activeCourseId={userProgress?.activeCourseId} />
     </div>
   );
