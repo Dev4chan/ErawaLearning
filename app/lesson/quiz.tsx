@@ -151,14 +151,11 @@ export const Quiz = ({
     }
   };
 
-<<<<<<< HEAD
   useEffect(()=>{
     console.log(challenge)
     console.log(initialHearts)
   },[])
-=======
   
->>>>>>> c20664dc5e845a5326c3fb877e5e16ceae9b8475
   if (!challenge) {
     return (
       <>
